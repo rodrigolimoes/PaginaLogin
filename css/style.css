@@ -1,0 +1,262 @@
+:root{
+    --cor-button: #9466FF;
+    --cor-background: white;
+    --cor-facebook: #3C5A99;
+    --cor-instagram:#EF2B4B;
+    --cor-gmail:#EA4335;
+    --cor-twitter:#2AA9E0;
+    --cor-verde:#059862;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #b099e2;
+}
+.Painel{
+    display: flex;
+    position: relative;
+    width: 700px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+}
+/*login*/
+.login{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--cor-background);
+}
+.login.active{
+    width: 40%;
+}
+.login h1{
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    color: var(--cor-button);
+
+}
+/*Formulario*/
+.input{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+input{
+    background-color: transparent;
+    outline: 0;
+    border:0px;
+    border-bottom: 1px solid var(--cor-button);
+    z-index: 1;
+    width: 100%;
+}
+input[type="text"].invalid, input[type="password"].invalid{
+    border-color: var(--cor-gmail);
+}
+label{
+    position: absolute;
+    top: 0%;
+    left: 5px;
+    transition: 0.3s;
+    color: var(--cor-button);
+}
+.submit{
+    display: block;
+    position: relative;
+    padding: 5px 80px;
+    margin: 20px 0;
+    border: 2px solid var(--cor-button);
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: 1s;
+    color: var(--cor-button);
+    cursor: pointer;
+    outline: 0;
+}
+.submit:hover{
+  color: white;
+}
+.submit::before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 0;
+    background-color: var(--cor-button);
+    transition: 1s;
+    transform: translate(-50%,-50%) rotate(45deg);
+    z-index: -1;
+}
+.submit:hover::before{
+    height: 900%;
+}
+form a{
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.errornome,.errorsenha{
+    position: absolute;
+    display: none;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    margin-top: 5px;
+}
+.errornome i, .errorsenha i{
+    color: red;
+    animation: error 0.1s ;
+}
+@keyframes error{
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}
+.errornome.invalid,.errorsenha.invalid{
+    display: block;
+}
+
+
+/*Social midia*/
+.container-social-midia{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:50px;
+}
+.social-midia{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 50%;
+    transition: 0.8s;
+    overflow: hidden;
+}
+.social-midia:hover{
+    border-radius: 50px;
+    width: 90px;
+    box-shadow: 1px 1px 1px 0px #9466FF;
+}
+.social-midia span:nth-child(1){
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0%;
+    left: 0%;
+    transition: all 1s;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+.social-midia:hover span:nth-child(1){
+    left: 0%;
+}
+.social-midia span:nth-child(2){
+    position: absolute;
+    left: 100%;
+    top: 30%;
+    transition:  1s;
+}
+.social-midia:hover span:nth-child(2){
+    left: 40%;
+}
+.face{
+    background-color: var(--cor-facebook);
+}
+.gmail{
+    background-color: var(--cor-gmail);
+}
+.instagram{
+    background-color: var(--cor-instagram);
+}
+.twitter{
+    background-color: var(--cor-twitter);
+}
+/**/
+.container-efeito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+
+}
+.container-efeito a{
+    width: 100%;
+    height: 100%;
+}
+.container-efeito img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+    object-fit: cover;
+}
+
+@media( max-width:700px){
+    .Painel{
+        flex-direction: column;
+        width:400px;
+    }
+    .container-efeito{
+        width: 100%;
+        height: 150px;
+        border-bottom-left-radius:0px ;  
+        border-top-right-radius: 20px;      
+    }
+    .container-efeito img{
+        border-top-right-radius: 20px; 
+        border-bottom-left-radius:0px ;
+    }
+    .login{
+        width: 100%;
+    }
+    .login h1{
+        top: 5px;
+        left: 100px;
+    }
+    form{
+        margin-top: 25px;
+    }
+}
