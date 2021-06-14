@@ -8,7 +8,7 @@ sendo postada pelo perfil: <a href="https://www.freepik.com/jcomp">jcomp</a>
   <img src="./img/error.gif">
   <img src="./img/error2.gif">
   
-## Animação Hover das Redes Sociais
+## Animação das Redes Sociais
   <img src="./img/redesocial.gif">
   
 ## Responsividade
